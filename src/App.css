@@ -1,0 +1,34 @@
+.main-nav {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.app-wrapper {
+  position: relative; /* Necessário para posicionar a barra no fundo */
+  min-height: 100vh;
+}
+
+.portal-footer {
+  margin-top: 10rem; /* Espaço acima do logo */
+}
+
+.footer-logo {
+  max-width: 200px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+.footer-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Altura da barra */
+  background: linear-gradient(to right, #34d399, #facc15, #3b82f6); /* Gradiente com as cores */
+}
