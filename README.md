@@ -55,7 +55,7 @@ Siga os passos abaixo para rodar o projeto na sua máquina.
 
 ## 👨‍💻 Autor
 
-Feito com Bruno Santana.
+Feito por Bruno Santana.
 
 Entre em contato:
 - https://www.linkedin.com/in/bruno-santanadev/
