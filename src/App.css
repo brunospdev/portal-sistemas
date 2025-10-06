@@ -11,7 +11,7 @@
 }
 
 .app-wrapper {
-  position: relative; /* Necessário para posicionar a barra no fundo */
+  position: relative; 
   min-height: 100vh;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .footer-logo {
-  max-width: 200px; /* Ajuste o tamanho conforme necessário */
+  max-width: 200px;
   height: auto;
 }
 
@@ -29,6 +29,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px; /* Altura da barra */
-  background: linear-gradient(to right, #34d399, #facc15, #3b82f6); /* Gradiente com as cores */
+  height: 8px; 
+  background: linear-gradient(to right, #34d399, #facc15, #3b82f6); 
 }
