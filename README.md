@@ -1,6 +1,6 @@
 # Portal de Sistemas 🚀
 
-Este é um projeto de estudo desenvolvido para replicar uma interface de um portal de sistemas. O objetivo foi praticar e consolidar conceitos fundamentais de desenvolvimento front-end, utilizando tecnologias modernas como React e Vite.
+Este é um projeto de um portal de sistemas. O objetivo foi praticar e consolidar conceitos fundamentais de desenvolvimento front-end, utilizando tecnologias modernas como React e Vite além de utiliza-lo para centralizar os Sistemas presentes no Sergipe Previdência.
 
 ---
 
@@ -55,7 +55,7 @@ Siga os passos abaixo para rodar o projeto na sua máquina.
 
 ## 👨‍💻 Autor
 
-Feito com Bruno Santana.
+Feito por Bruno Santana.
 
 Entre em contato:
 - https://www.linkedin.com/in/bruno-santanadev/
