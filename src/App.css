@@ -11,16 +11,20 @@
 }
 
 .app-wrapper {
-  position: relative; 
-  min-height: 100vh;
+  position: relative;
+  height: 100vh; /* ocupa 100% da tela */
 }
 
 .portal-footer {
-  margin-top: 10rem; /* Espaço acima do logo */
+  position: static; /* volta ao fluxo normal */
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-logo {
-  max-width: 200px;
+  max-width: 130px;
   height: auto;
 }
 
@@ -29,6 +33,6 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px; 
-  background: linear-gradient(to right, #34d399, #facc15, #3b82f6); 
+  height: 8px;
+  background: linear-gradient(to right, #34d399, #facc15, #3b82f6);
 }

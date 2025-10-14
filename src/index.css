@@ -1,37 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 body {
-  margin: 0; 
-  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(to right, #1e3a8a, #4f46e5);
-  color: white; 
+  color: white;
 }
 .portal-container {
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;     
-  min-height: 100vh;       
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
-  padding: 2rem;
-  box-sizing: border-box; 
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .portal-header h1 {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
+  font-size: 3.25rem;
+  margin: 0.75rem 0; 
+  font-weight: 700; 
+  letter-spacing: 0.5px; 
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25); 
+}
+
+.portal-header h1::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 6px;
+  margin: 8px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(to right, #34d399, #facc15, #3b82f6);
 }
 
 .portal-header p {
-  font-size: 1.5rem;
-  color: #d1d5db; 
-  margin-bottom: 3rem; 
+  font-size: 1.1rem;
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
 }
 
 .systems-grid {
   display: flex;
-  gap: 2rem; 
+  gap: 1.5rem;
   justify-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
+/* Sections layout */
+.sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+}
+
+/* Enhanced section visuals */
+.section-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.25rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0.25rem 0 0.75rem 0;
+  color: #d1d5db;
+  font-size: 0.85rem;
+  text-align: center;
+}
