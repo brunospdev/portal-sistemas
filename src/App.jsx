@@ -13,7 +13,7 @@ const systems = [
   { id: 3, name: "Concessão", icon: "📝", url: "http://172.23.41.4:8080/" },
   {
     id: 4,
-    name: "Revisão de Folha",
+    name: "Sistema Revisão de Folha",
     icon: "🧾",
     url: "http://ipesprevi-s004/Reports/browse/Revis%C3%A3o%20de%20Folha",
   },
