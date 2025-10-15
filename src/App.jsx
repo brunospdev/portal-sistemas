@@ -113,11 +113,7 @@ function App() {
             </div>
           </section>
         </main>
-
-        {/* footer removido */}
       </div>
-
-      <div className="footer-bar"></div>
     </div>
   );
 }
