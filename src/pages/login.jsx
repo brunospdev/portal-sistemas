@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { login } from "../service/api";
 import { useNavigate } from "react-router-dom";
-import sergipeLogo from "/src/assets/sergipe logo.png";
+import logoAzul from "../assets/logo-azul.svg";
 import "/src/App.css";
 
 export default function Login() {
@@ -34,30 +33,53 @@ export default function Login() {
 
   return (
     <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <label>Usuário</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+      <div className="right-col" aria-hidden="true">
+        <div className="top-stripe" aria-hidden="true">
+          <span className="seg blue" />
+          <span className="seg green" />
+          <span className="seg orange" />
+        </div>
 
-          <label>Senha</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+        <div className="hero">
+          <h1>
+            Bem-vindo ao
+            <br />
+            portal de aplicações!
+          </h1>
+        </div>
 
-          <button type="submit">Entrar</button>
-        </form>
+        <div className="bottom-logo">
+          <img src={logoAzul} alt="Logo Sergipe Previdência" />
+        </div>
+      </div>
 
-        {message && <p className="message">{message}</p>}
-        {error && <p className="error">{error}</p>}
+      <div className="left-col">
+        <div className="login-box">
+          <h2>Login</h2>
+          <h4>Entre com suas credenciais para acessar o portal</h4>
+          <form onSubmit={handleSubmit}>
+            <label>Usuário</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+
+            <label>Senha</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+
+            <button type="submit">Entrar</button>
+          </form>
+
+          {message && <p className="message">{message}</p>}
+          {error && <p className="error">{error}</p>}
+        </div>
       </div>
     </div>
   );

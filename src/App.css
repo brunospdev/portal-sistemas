@@ -27,72 +27,135 @@
   max-width: 130px;
   height: auto;
 }
+
 /* Login.css */
 
 .login-container {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(90deg, #1e3a8a 0%, #4f46e5 100%);
+}
+
+.left-col {
+  flex: 0 0 60%;
+  display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  justify-content: center;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+.right-col {
+  flex: 0 0 40%;
+  background: #ffffff;
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 60px; 
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.05);
+  position: relative; 
+  overflow: hidden;
+  min-height: 100vh; 
+}
+
+.top-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  display: flex;
+  align-items: stretch;
+  border-top-left-radius: 0; 
+  overflow: hidden;
+}
+
+.top-stripe .seg {
+  display: block;
+  height: 100%;
+}
+
+.top-stripe .seg.blue {
+  width: 33%;
+  background: #0f8bcf;
+}
+.top-stripe .seg.green {
+  width: 33%;
+  background: #8cc63f;
+}
+.top-stripe .seg.orange {
+  width: 34%;
+  background: #f2a200;
 }
 
 .login-box {
   background: white;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  width: 340px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 420px;
+  text-align: left;
+}
+
+/* títulos e inputs */
+.login-box h2 {
+  color: #1a237e;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 0;
   text-align: center;
 }
 
-.login-box h2 {
-  margin-bottom: 25px;
-  color: #1e3c72;
+.login-box h4 {
+  color: #949494;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center; 
 }
 
 .login-box label {
   display: block;
   text-align: left;
-  font-weight: 600;
+  font-size: 14px;
+  color: #333;
   margin-bottom: 8px;
-  color: #444;
 }
 
 .login-box input {
-  width: 90%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 1.8px solid #ccc;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.login-box input:focus {
-  border-color: #1e3c72;
-  outline: none;
+  margin-bottom: 16px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
 .login-box button {
   width: 100%;
-  padding: 12px;
-  background-color: #1e3c72;
+  padding: 14px;
+  background-color: #1a237e;
+  color: white;
   border: none;
   border-radius: 8px;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-transform: uppercase;
 }
 
 .login-box button:hover {
-  background-color: #16375b;
+  background-color: #151b60;
 }
 
+.logo {
+  max-width: 140px;
+  margin-top: 18px;
+  display: block;
+}
+
+/* mensagens */
 .message {
   margin-top: 15px;
   font-weight: 600;
@@ -105,8 +168,72 @@
   color: #b32e2e;
 }
 
-.logo {
-  max-width: 150px;
-  margin: 0 auto 20px auto;
+.right-col .hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  text-align: left;
+}
+
+.right-col .hero h1 {
+  margin: 0;
+  color: #2b49a3;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.bottom-logo {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5; 
+}
+
+.bottom-logo img {
+  width: 180px;
+  height: auto;
   display: block;
+}
+
+@media (max-width: 900px) {
+  .right-col .hero {
+    width: 92%;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .right-col .hero h1 {
+    font-size: 36px;
+  }
+
+  .right-col .hero .hero-link {
+    align-self: flex-end;
+  }
+}
+
+.watermark {
+  display: none;
+}
+
+.watermark img {
+  display: none;
 }
