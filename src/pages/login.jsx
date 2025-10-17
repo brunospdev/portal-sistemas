@@ -20,7 +20,9 @@ export default function Login() {
       const response = await login(username, password);
       setMessage(response.data.message);
 
-      // redirecionar após sucesso
+      // ✅ salva a autenticação
+      localStorage.setItem("isAuthenticated", "true");
+
       setTimeout(() => {
         navigate("/home");
       }, 1000);
