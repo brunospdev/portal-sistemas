@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login } from "../service/api"; // ✅ import corrigido
 import logoAzul from "../assets/logo-azul.svg";
 import "/src/App.css";
 
@@ -18,6 +19,9 @@ export default function Login() {
     try {
       const response = await login(username, password);
       setMessage(response.data.message);
+
+      // ✅ salva a autenticação
+      localStorage.setItem("isAuthenticated", "true");
 
       setTimeout(() => {
         navigate("/home");
@@ -57,6 +61,7 @@ export default function Login() {
         <div className="login-box">
           <h2>Login</h2>
           <h4>Entre com suas credenciais para acessar o portal</h4>
+
           <form onSubmit={handleSubmit}>
             <label>Usuário</label>
             <input
