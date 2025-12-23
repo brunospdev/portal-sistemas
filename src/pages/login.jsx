@@ -18,10 +18,12 @@ export default function Login() {
 
     try {
       const response = await login(username, password);
-      setMessage(response.data.message);
 
-      // ✅ salva a autenticação
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("username", response.data.username);
       localStorage.setItem("isAuthenticated", "true");
+
+      setMessage("Login realizado com sucesso!");
 
       setTimeout(() => {
         navigate("/home");
