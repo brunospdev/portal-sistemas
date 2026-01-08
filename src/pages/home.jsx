@@ -130,7 +130,7 @@ function App() {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     localStorage.removeItem("isAuthenticated");
-    navigate("/login");
+    navigate("/");
   };
 
   const filterSystems = (systemsList) => {
