@@ -1,12 +1,12 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { AUTH_ENABLED } from "../config/auth";
 
 export default function ProtectedRoute({ children }) {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
+  if (!AUTH_ENABLED) return children;
 
-  if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
+  if (!isAuthenticated) return <Navigate to="/" replace />;
 
   return children;
 }

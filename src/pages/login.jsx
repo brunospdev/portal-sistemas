@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../service/api"; // ✅ import corrigido
+import { login } from "../service/api";
+import { AUTH_ENABLED } from "../config/auth";
 import logoAzul from "../assets/logo-azul.svg";
 import "/src/App.css";
 
@@ -10,6 +11,8 @@ export default function Login() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  if (!AUTH_ENABLED) return null;
 
   async function handleSubmit(e) {
     e.preventDefault();

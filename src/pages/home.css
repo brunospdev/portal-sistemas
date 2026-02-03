@@ -1,0 +1,95 @@
+/* Home layout (matches reference screenshot) */
+
+.home-portal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 1.25rem 1.25rem 1.25rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.home-content {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    height: 100%;
+    zoom: 1.1;
+}
+
+@supports not (zoom: 1) {
+    .home-content {
+        transform: scale(1.1);
+        transform-origin: center;
+    }
+}
+
+.home-portal .portal-header {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+}
+
+.home-portal .portal-header h1 {
+    font-size: clamp(2.2rem, 4.2vw, 3.05rem);
+    margin: 0.25rem 0 0.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.home-portal .portal-header h1::after {
+    content: "";
+    display: block;
+    width: clamp(110px, 14vw, 140px);
+    height: 6px;
+    margin: 8px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(to right, #34d399, #facc15, #3b82f6);
+}
+
+.home-portal .sections-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    margin-top: 0.35rem;
+    flex: 0 1 auto;
+    overflow: visible;
+}
+
+.home-portal .section-title {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    color: white;
+}
+
+.home-portal .section-subtitle {
+    margin: 0.15rem 0 0.65rem 0;
+    color: #d1d5db;
+    font-size: 0.85rem;
+}
+
+.home-portal .systems-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: visible;
+}
