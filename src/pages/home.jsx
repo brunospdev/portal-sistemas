@@ -45,7 +45,7 @@ const systems = [
   },
   {
     id: 5,
-    name: "Sistema de Gestão Interna",
+    name: "Sistema de Gestão Integrada",
     icon: <FaChartBar />,
     url: "http://172.23.41.3:5173/",
     color: "#22c55e",
