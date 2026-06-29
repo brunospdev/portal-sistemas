@@ -13,7 +13,7 @@
 .app-wrapper {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #d4d4d4 0%, #9ca3af 100%);
   padding: 0;
 }
 
@@ -27,8 +27,8 @@
 .portal-header {
   background: linear-gradient(
     135deg,
-    rgba(102, 126, 234, 0.95) 0%,
-    rgba(118, 75, 162, 0.95) 100%
+    rgba(156, 163, 175, 0.95) 0%,
+    rgba(107, 114, 128, 0.95) 100%
   );
   backdrop-filter: blur(10px);
   padding: 2rem 3rem;
@@ -238,8 +238,8 @@
 .portal-footer-new {
   background: linear-gradient(
     135deg,
-    rgba(102, 126, 234, 0.95) 0%,
-    rgba(118, 75, 162, 0.95) 100%
+    rgba(156, 163, 175, 0.95) 0%,
+    rgba(107, 114, 128, 0.95) 100%
   );
   backdrop-filter: blur(10px);
   padding: 2.5rem 3rem 2rem;
@@ -367,7 +367,7 @@
   min-height: 100vh;
   display: flex;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(90deg, #1e3a8a 0%, #4f46e5 100%);
+  background: linear-gradient(90deg, #4b5563 0%, #9ca3af 100%);
 }
 
 .left-col {
@@ -409,7 +409,7 @@
 
 .top-stripe .seg.blue {
   width: 33%;
-  background: #0f8bcf;
+  background: #6b7280;
 }
 .top-stripe .seg.green {
   width: 33%;
@@ -431,7 +431,7 @@
 
 /* títulos e inputs */
 .login-box h2 {
-  color: #1a237e;
+  color: #374151;
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -468,7 +468,7 @@
 .login-box button {
   width: 100%;
   padding: 14px;
-  background-color: #1a237e;
+  background-color: #4b5563;
   color: white;
   border: none;
   border-radius: 8px;
@@ -479,7 +479,7 @@
 }
 
 .login-box button:hover {
-  background-color: #151b60;
+  background-color: #374151;
 }
 
 .logo {
@@ -519,7 +519,7 @@
 
 .right-col .hero h1 {
   margin: 0;
-  color: #2b49a3;
+  color: #374151;
   font-size: 48px;
   line-height: 1.2;
   font-weight: 700;
