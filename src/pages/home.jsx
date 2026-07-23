@@ -13,6 +13,7 @@ import edocLogo from "/src/assets/e-doc logo.png";
 import expressoLogo from "/src/assets/expresso logo.png";
 import comprasnetLogo from "/src/assets/comprasnet logo.png";
 import sergipeLogo from "/src/assets/sergipe logo.png";
+import logosei from "/src/assets/logosei.png";
 
 const systems = [
   {
@@ -101,6 +102,13 @@ const generalSystems = [
       />
     ),
     url: "https://sergipeprevidencia.se.gov.br/",
+    color: "#111827",
+  },
+  {
+    id: "g7",
+    name: "SEI!",
+    icon: <img src={logosei} alt="SEI!" className="card-icon-image" />,
+    url: "https://sei.se.gov.br/sip/login.php?sigla_orgao_sistema=SE&sigla_sistema=SEI&infra_url=L3NlaS8=",
     color: "#111827",
   },
 ];
