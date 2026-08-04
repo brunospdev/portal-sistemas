@@ -1,162 +1,99 @@
-import {
-  FaPhone,
-  FaCheckCircle,
-  FaFileAlt,
-  FaFileInvoice,
-  FaChartBar,
-} from "react-icons/fa";
+import { useMemo, useState } from "react";
+import { FaChartBar, FaFileInvoice, FaPhone, FaSearch } from "react-icons/fa";
 import "./home.css";
-import SystemCard from "/src/components/SystemCard";
-import glpiLogo from "/src/assets/glpi logo.png";
-import sisprevLogo from "/src/assets/sisprev logo.png";
-import edocLogo from "/src/assets/e-doc logo.png";
-import expressoLogo from "/src/assets/expresso logo.png";
-import comprasnetLogo from "/src/assets/comprasnet logo.png";
-import sergipeLogo from "/src/assets/sergipe logo.png";
-import logosei from "/src/assets/logosei.png";
+import SystemCard from "../components/SystemCard";
+import glpiLogo from "../assets/glpi logo.png";
+import sisprevLogo from "../assets/sisprev logo.png";
+import edocLogo from "../assets/e-doc logo.png";
+import expressoLogo from "../assets/expresso logo.png";
+import comprasnetLogo from "../assets/comprasnet logo.png";
+import sergipeLogo from "../assets/sergipe logo.png";
+import logosei from "../assets/logosei.png";
+import brandLogo from "../assets/logo-azul.svg";
 
-const systems = [
-  {
-    id: 1,
-    name: "Atendimento",
-    icon: <FaPhone />,
-    url: "http://172.23.41.3:5700/",
-    color: "#ec4899",
-  },
-  // {
-  //   id: 2,
-  //   name: "Prova de Vida",
-  //   icon: <FaCheckCircle />,
-  //   url: "http://172.23.41.3:5001/",
-  //   color: "#22c55e",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Concessão",
-  //   icon: <FaFileAlt />,
-  //   url: "http://172.23.41.4:8080/",
-  //   color: "#f97316",
-  // },
-  {
-    id: 4,
-    name: "Sistema Revisão de Folha",
-    icon: <FaFileInvoice />,
-    url: "http://ipesprevi-s004/Reports/browse/Revis%C3%A3o%20de%20Folha",
-    color: "#a855f7",
-  },
-  {
-    id: 5,
-    name: "Sistema de Gestão Integrada",
-    icon: <FaChartBar />,
-    url: "http://172.23.41.3:5173/",
-    color: "#22c55e",
-  },
-];
+const imageIcon = (src) => (
+  <img src={src} alt="" className="card-icon-image" />
+);
 
 const generalSystems = [
-  {
-    id: "g1",
-    name: "GLPI",
-    icon: <img src={glpiLogo} alt="GLPI" className="card-icon-image" />,
-    url: "http://172.23.41.3/glpi/front/login.php",
-    color: "#111827",
-  },
-  {
-    id: "g2",
-    name: "SISPREV",
-    icon: <img src={sisprevLogo} alt="SISPREV" className="card-icon-image" />,
-    url: "https://sisprev.sergipeprevidencia.se.gov.br/Login/Login.aspx",
-    color: "#111827",
-  },
-  {
-    id: "g3",
-    name: "E-DOC",
-    icon: <img src={edocLogo} alt="E-DOC" className="card-icon-image" />,
-    url: "https://edoc.se.gov.br/docflow/xhtml/docflow/geral/login.jsf",
-    color: "#111827",
-  },
-  {
-    id: "g4",
-    name: "Expresso",
-    icon: <img src={expressoLogo} alt="Expresso" className="card-icon-image" />,
-    url: "https://expresso.se.gov.br/login.php",
-    color: "#111827",
-  },
-  {
-    id: "g5",
-    name: "ComprasNet",
-    icon: (
-      <img src={comprasnetLogo} alt="ComprasNet" className="card-icon-image" />
-    ),
-    url: "https://www.comprasnet.se.gov.br/",
-    color: "#111827",
-  },
-  {
-    id: "g6",
-    name: "Sergipe\nPrevidência",
-    icon: (
-      <img
-        src={sergipeLogo}
-        alt="Sergipe Previdência"
-        className="card-icon-image"
-      />
-    ),
-    url: "https://sergipeprevidencia.se.gov.br/",
-    color: "#111827",
-  },
-  {
-    id: "g7",
-    name: "SEI!",
-    icon: <img src={logosei} alt="SEI!" className="card-icon-image" />,
-    url: "https://sei.se.gov.br/sip/login.php?sigla_orgao_sistema=SE&sigla_sistema=SEI&infra_url=L3NlaS8=",
-    color: "#111827",
-  },
+  { id: "g1", name: "GLPI", description: "Suporte técnico e abertura de chamados.", icon: imageIcon(glpiLogo), url: "http://172.23.41.3/glpi/front/login.php" },
+  { id: "g2", name: "SISPREV", description: "Gestão previdenciária.", icon: imageIcon(sisprevLogo), url: "https://sisprev.sergipeprevidencia.se.gov.br/Login/Login.aspx" },
+  { id: "g3", name: "E-DOC", description: "Documentos e processos digitais.", icon: imageIcon(edocLogo), url: "https://edoc.se.gov.br/docflow/xhtml/docflow/geral/login.jsf" },
+  { id: "g4", name: "Expresso", description: "Comunicação e correio institucional.", icon: imageIcon(expressoLogo), url: "https://expresso.se.gov.br/login.php" },
+  { id: "g5", name: "ComprasNet", description: "Compras e contratações públicas.", icon: imageIcon(comprasnetLogo), url: "https://www.comprasnet.se.gov.br/" },
+  { id: "g6", name: "Sergipe Previdência", description: "Portal institucional da SergipePrevidência.", icon: imageIcon(sergipeLogo), url: "https://sergipeprevidencia.se.gov.br/" },
+  { id: "g7", name: "SEI!", description: "Sistema Eletrônico de Informações.", icon: imageIcon(logosei), url: "https://sei.se.gov.br/sip/login.php?sigla_orgao_sistema=SE&sigla_sistema=SEI&infra_url=L3NlaS8=" },
 ];
 
-export default function Home() {
+const specificSystems = [
+  { id: 1, name: "Atendimento", description: "Acesso ao sistema de atendimento.", icon: <FaPhone />, url: "http://172.23.41.3:5700/" },
+  { id: 4, name: "Sistema Revisão de Folha", description: "Relatórios e processos de revisão de folha.", icon: <FaFileInvoice />, url: "http://ipesprevi-s004/Reports/browse/Revis%C3%A3o%20de%20Folha" },
+  { id: 5, name: "Sistema de Gestão Integrada", description: "Acesso ao ambiente integrado de gestão.", icon: <FaChartBar />, url: "http://172.23.41.3:5173/" },
+];
+
+function filterSystems(systems, query) {
+  const term = query.trim().toLocaleLowerCase("pt-BR");
+  if (!term) return systems;
+  return systems.filter(({ name, description }) =>
+    `${name} ${description}`.toLocaleLowerCase("pt-BR").includes(term),
+  );
+}
+
+function SystemsSection({ label, title, subtitle, systems }) {
+  if (!systems.length) return null;
   return (
-    <div className="portal-container home-portal">
-      <div className="home-content">
-        <header className="portal-header">
-          <h1>Portal de Aplicações</h1>
-        </header>
-
-        <main className="sections-wrapper">
-          <section className="section">
-            <h2 className="section-title">Aplicações Gerais</h2>
-            <p className="section-subtitle">Ferramentas gerais do portal</p>
-            <div className="systems-grid">
-              {generalSystems.map((system) => (
-                <SystemCard
-                  key={system.id}
-                  title={system.name}
-                  icon={system.icon}
-                  url={system.url}
-                  color={system.color}
-                />
-              ))}
-            </div>
-          </section>
-
-          <section className="section">
-            <h2 className="section-title">Aplicações Específicas</h2>
-            <p className="section-subtitle">
-              Sistemas específicos por área de atuação
-            </p>
-            <div className="systems-grid">
-              {systems.map((system) => (
-                <SystemCard
-                  key={system.id}
-                  title={system.name}
-                  icon={system.icon}
-                  url={system.url}
-                  color={system.color}
-                />
-              ))}
-            </div>
-          </section>
-        </main>
+    <section className="section">
+      <div className="section-heading">
+        <div>
+          <span className="eyebrow">{label}</span>
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
+        </div>
+        <span className="section-count">
+          {systems.length} {systems.length === 1 ? "aplicação" : "aplicações"}
+        </span>
       </div>
+      <div className="systems-grid">
+        {systems.map((system) => <SystemCard key={system.id} {...system} title={system.name} />)}
+      </div>
+    </section>
+  );
+}
+
+export default function Home() {
+  const [query, setQuery] = useState("");
+  const generalResults = useMemo(() => filterSystems(generalSystems, query), [query]);
+  const specificResults = useMemo(() => filterSystems(specificSystems, query), [query]);
+  const hasResults = generalResults.length + specificResults.length > 0;
+
+  return (
+    <div className="home-portal">
+      <main className="home-content">
+        <div className="page-heading-row">
+          <div className="page-heading">
+            <span className="eyebrow">SERGIPE PREVIDÊNCIA</span>
+            <h1>Portal de Aplicações</h1>
+            <p>Acesse rapidamente as aplicações disponíveis.</p>
+            <div className="brand-accent" aria-hidden="true">
+              <span /><span /><span />
+            </div>
+          </div>
+          <label className="search-field">
+            <FaSearch aria-hidden="true" />
+            <span className="sr-only">Pesquisar aplicações</span>
+            <input type="search" placeholder="Pesquisar aplicação..." value={query} onChange={(event) => setQuery(event.target.value)} />
+          </label>
+        </div>
+        {hasResults ? (
+          <div className="sections-wrapper">
+            <SystemsSection label="ACESSO ESPECÍFICO" title="Aplicações Específicas" subtitle="Sistemas específicos por área de atuação." systems={specificResults} />
+            <SystemsSection label="ACESSO GERAL" title="Aplicações Gerais" subtitle="Ferramentas e serviços disponíveis para todos." systems={generalResults} />
+          </div>
+        ) : (
+          <div className="empty-state"><FaSearch aria-hidden="true" /><h2>Nenhuma aplicação encontrada</h2><p>Tente pesquisar usando outro nome ou termo.</p></div>
+        )}
+        <img src={brandLogo} alt="Sergipe Previdência" className="portal-signature" />
+      </main>
     </div>
   );
 }
