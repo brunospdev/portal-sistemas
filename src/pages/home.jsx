@@ -28,7 +28,7 @@ const generalSystems = [
 const specificSystems = [
   { id: 1, name: "Atendimento", description: "Acesso ao sistema de atendimento.", icon: <FaPhone />, url: "http://172.23.41.3:5700/" },
   { id: 4, name: "Sistema Revisão de Folha", description: "Relatórios e processos de revisão de folha.", icon: <FaFileInvoice />, url: "http://ipesprevi-s004/Reports/browse/Revis%C3%A3o%20de%20Folha" },
-  { id: 5, name: "Sistema de Gestão Integrada", description: "Acesso ao ambiente integrado de gestão.", icon: <FaChartBar />, url: "http://172.23.41.3:5173/" },
+  { id: 5, name: "Sistema de Gestão Integrada (SGI)", description: "Acesso ao ambiente integrado de gestão.", icon: <FaChartBar />, url: "http://172.23.41.3:5173/" },
 ];
 
 function filterSystems(systems, query) {
